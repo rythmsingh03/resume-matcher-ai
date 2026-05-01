@@ -34,10 +34,13 @@ export default function App() {
       formData.append("resume", resumeFile);
       formData.append("jd_text", jdText);
 
-      const response = await fetch("http://127.0.0.1:8000/analyze", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://rythmsingh03-resume-matcher-api.hf.space/analyze",
+        {
+          method: "POST",
+          body: formData,
+        },
+      );
 
       if (!response.ok)
         throw new Error("Server error. Make sure backend is running.");
